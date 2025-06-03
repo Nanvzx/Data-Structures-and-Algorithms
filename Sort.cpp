@@ -93,7 +93,7 @@ int part(vector<int> &arr,int low,int high){
 }
 void qs(vector<int> &arr,int low,int high){
     if(low<high){
-        int pindex= part(arr,low,high);
+        int pindex = part(arr,low,high);
         qs(arr,low,pindex-1);
         qs(arr,pindex+1,high);
     }
