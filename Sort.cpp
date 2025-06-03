@@ -37,6 +37,17 @@ void insertion_sort(int arr[],int n){
     }
 }
 
+
+void mS(vector<int> &arr,int low,int high){
+    if(low>=high) return;
+    int mid = (high + low) / 2;
+    mS(arr,low,mid);
+    mS(arr,mid+1,high);
+    mS(arr,low,mid,high);
+}
+void mergeSort(vector<int> &arr,int n){
+    ms(arr,0,n-1);
+}
 int main(){
     int n;
     cin>>n;
