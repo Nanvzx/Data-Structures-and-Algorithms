@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-
+//Selection Sort
 void selection_sort(int arr[],int n){
     for(int i=0;i<=n-2;i++){
         int mini = i;
@@ -15,7 +15,7 @@ void selection_sort(int arr[],int n){
 
     }
 }
-
+//Bubble Sort
 void bubble_sort(int arr[],int n){
     for(int i=n-1;i<=1;i--){
         for(int j=0;j<=i-1;i++){
@@ -26,7 +26,7 @@ void bubble_sort(int arr[],int n){
     }
     
 }
-
+//Insertion Sort
 void insertion_sort(int arr[],int n){
     for(int i=0;i<=n-1;i++){
         int j=i;
@@ -36,7 +36,7 @@ void insertion_sort(int arr[],int n){
         }
     }
 }
-
+// Merge Sort
 void merge(vector<int> &arr,int low,int mid,int high){
     vector<int> temp;
     int left = low;
@@ -73,6 +73,39 @@ void mS(vector<int> &arr,int low,int high){
 void mergeSort(vector<int> &arr,int n){
     mS(arr,0,n-1);
 }
+//Quick Sort
+int part(vector<int> &arr,int low,int high){
+    int pivot = arr[low];
+    int i = low;
+    int j = high;
+    while(i<j){
+        while(arr[i]<= pivot && i<= high-1){
+           i++; 
+        }
+        while(arr[j]> pivot && j > low+1){
+            j--;
+        }
+        if(i<j) swap(arr[i],arr[j]);
+    }
+    swap(arr[low],arr[j]);
+    return j;
+
+}
+void qs(vector<int> &arr,int low,int high){
+    if(low<high){
+        int pindex= part(arr,low,high);
+        qs(arr,low,pindex-1);
+        qs(arr,pindex+1,high);
+    }
+}
+vector<int> quicksort(vector<int> arr,int n){
+    qs(arr,0,arr.size()-1);
+    return arr;
+}
+
+
+
+//Main Function
 int main(){
     int n;
     cin>>n;
@@ -80,7 +113,7 @@ int main(){
     for(int i = 0;i<n;i++){
        cin>>arr[i];
     }
-    mergeSort(arr,n);    
+    quicksort(arr,n);    
     for(int i=0;i<n;i++){
         cout<<arr[i]<<" ";
     }
