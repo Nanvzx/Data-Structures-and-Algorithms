@@ -11,7 +11,7 @@ int largestele(vector<int> &arr,int n){
     }
     return large;
 }
-
+//Second Largest element
 int secondlargest(vector<int> &arr,int n){
     int large = arr[0];
     for(int i=1;i<n;i++){
@@ -27,11 +27,23 @@ int secondlargest(vector<int> &arr,int n){
     }
     return sec;
 }
+// Check if the array is sorted
+int isSorted(int n, vector<int> a){
+    for(int i=1;i<n;i++){
+        if(a[i]>=a[i-1]){
+            
+        }
+        else{
+            return false;
+        }
+    }
+    return true;
+}
 int main(){
     int n;
     vector<int> arr(n);
     for(int i=0;i<n;i++){
         cin>>arr[i];
     }
-    cout<<secondlargest(arr,n);
+    cout<<isSorted(n,arr);
 }
