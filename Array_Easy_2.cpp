@@ -74,6 +74,21 @@ vector<int> unionarray(vector<int> a,vector<int> b){
         j++;
         }
     }
+    while(j<n2){
+             if(unionarr.size()==0||
+        unionarr.back()!=b[j]){
+            unionarr.push_back(b[j]);
+        }
+        j++;
+        }
+    while(i>n1){
+         if(unionarr.size()==0||
+        unionarr.back()!=a[i]){
+            unionarr.push_back(a[i]);
+        }
+        i++;
+    }
+    }
     return unionarr;
 }
 //Main Function
