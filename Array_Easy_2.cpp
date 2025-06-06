@@ -88,8 +88,28 @@ vector<int> unionarray(vector<int> a,vector<int> b){
         }
         i++;
     }
-    }
+    
     return unionarr;
+}
+// Intersection of two arrays
+vector<int> intersct(vector<int> &a,int n,vector<int> &b,int m){
+    int i=0;
+    int j=0;
+    vector<int> ans;
+    while(i<n && j<m){
+        if(a[i]<b[j]){
+            i++;
+        }
+        else if(b[j]<a[i]){
+            j++;
+        }
+        else{
+            ans.push_back(a[i]);
+            i++;
+            j++;
+        }
+    }
+    return ans;
 }
 //Main Function
 int main(){
