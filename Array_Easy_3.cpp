@@ -11,7 +11,21 @@ int missingNumber(vector<int> &a,int n){
     }
     return xor1 ^ xor2;
 }
-
+// Finding the max consecutive ones
+int findmaxones(vector<int> &arr){
+    int maxi =0;
+    int cnt = 0;
+    for(int i = 0;i<arr.size();i++){
+        if(arr[i]==1){
+            cnt ++;
+            maxi = max(maxi,cnt); 
+        }
+        else{
+            cnt = 0;
+        }
+    }
+    return maxi;
+}
 
 
 
